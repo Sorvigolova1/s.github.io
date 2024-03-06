@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SchoolProject</title>
+  <style type="text/css">
+   
+  @media screen and (max-width:657px){
+   
+    .wrapper{
+      font-size: 90%;
+    }
+    
+    .active{
+      font-size:48px;
+    }
+
+    
+  }
+  body{
+    font-size: 25px;
+        font-family: SFProText-Light;
+        color: white;
+  }
+   @font-face {
+        font-family:SFProText-Light ;
+        src: url('./SFProText-Light.ttf');
+      }
+
+  
+
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+  }
+  .wrapper{
+    overflow-x: hidden;
+  }
+  
+ 
+
+  .page1,.page2{
+border-bottom: 5px solid grey;
+  }
+  .page2{
+    height: 100%;
+    background: black;
+  }
+  
+
+  .page1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+  }
+  .introduction{
+    transform:translateY(200px);
+    opacity: 30%;
+    font-size:48px;
+
+  }
+  .active{
+    opacity: 100;
+    transition: 1.5s;
+   transform:translateY(-15px);
+     font-size:48px
+  }
+  .nameless{
+    text-align: center;
+    font-size: 29px;
+    transition: 1s;
+    opacity: 0%;
+  }
+  
+  
+
+  
+  .eyes{
+    display: flex;
+    margin-top: 30px;
+  }
+  .Eye1,.Eye2{
+    width: 150px;
+    height: 150px;
+    border-radius:50% ;
+    border:3px solid white;
+    position: relative;
+  }
+  .eye1,.eye2{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid;
+    position: absolute;
+    left: 110px;
+    background: white;
+    bottom: 35px;
+  }
+  .container{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vh;
+  }
+  .potion{
+    width: 30px;
+    height: 150px;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    margin-left: 95px;
+    margin-top: 10px;
+    position: relative;
+  }
+  .potion:after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: white;
+    animation: filling 2s ease-in-out infinite;
+  }
+  @keyframes filling {
+    0%{
+      height: 0px;
+    }
+    20%{
+      height: 20px;
+    }
+    40%{
+      height: 48px;
+    }
+    60%{
+      height: 64px;
+    }
+    80%{
+      height: 99px;
+    }
+    100%{
+      height: 120px;
+    }
+    
+  }
+  .methods{
+    display: flex;width: 100%;height: 46vh;justify-content:space-evenly;align-items: center;flex-direction: column
+  }
+  
+ 
+@keyframes eyeing{
+  0%{
+    left: 0px;
+  }
+  100%{
+    left: 110px;
+  }
+}
+
+.k1{
+  font-size: 48px;
+}
+.qwerty{
+  height: 300px;
+}
+.k2{
+  margin-top: 10px; 
+  font-size: 29px;
+  text-align: center;
+}
+.m2{
+  font-size: 25px;
+}
+
+
+@media screen and (max-width:992px){
+    .eye1,.eye2{
+      animation: eyeing 2s infinite alternate;
+    }
+
+  }
+  @media screen and (max-width:657px){
+    .wrapper{
+      font-size: 90%;
+    }
+
+    .introduction,.active,.k1{
+      font-size:calc(34px + 14 *(100vw - 375px)/880);
+    }
+    .nameless,.k2{
+      font-size:calc(24px + 5 *(100vw - 375px)/880);
+    }
+    .m1{
+      font-size:calc(20px + 5 *(100vw - 375px)/880);
+
+    }
+    .m2,.methods,a{
+      font-size:calc(19px + 6 *(100vw - 375px)/880);
+    }
+    .step,.step1{
+       font-size:calc(18px + 7 *(100vw - 375px)/880);
+
+
+    }
+
+    
+  }
+  @media screen and (max-width:519px){
+    .container{
+      display: block;
+      height: 100%;
+    }
+    .block2,.block1{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .methods{
+      justify-content: flex-start;
+      height: 100%;
+      margin-bottom: 15px;
+    }
+    .potion{
+      margin-left: -5px;
+    }
+    ol > li{
+      margin-left: 23px;
+    }
+  }
+  menu{
+    position: absolute;
+    display: flex;
+  justify-content: center;
+    height: 50px;
+   width: 100%;
+    top: 20px;
+    
+    
+  }
+  menu > ul{
+    border-radius: 10px;
+    list-style: none;
+    background: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: -13px;
+    justify-content:space-around;
+    opacity: 0;
+    transition-duration: 3s;
+  }
+
+  
+  menu > ul > li > a {
+  text-decoration: none;
+  padding:0px 40px;
+  color: red;
+  }
+ menu > ul > li:hover {
+    transform:scale(1.3);
+    transition-duration: 650ms;
+  }
+@media screen and (max-width:519px){
+  menu{
+    height: 100px;
+  }
+  menu > ul{
+margin-right: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+   menu > ul > li{
+    margin-left: 0px;
+   }
+ 
+
+    
+  </style>
+</head>
+<body>
+   <div class="wrapper">
+    <menu>
+      <ul class="menu"> 
+     <li><a href="school.html">Общее</a></li>
+      <li><a href="kinematika.html">Кинематика</a></li>
+      <li><a href="dinamika.html">Динамика</a></li>
+      </ul>
+    </menu>
+    <div class="page1">
+    <div class="introduction">Что такое физика?</div>
+    <div class="nameless">Физика-фундаментальная наука о природе,<br>которая изучает физические тела, вещества и физические явления.</div>
+    </div>
+    <div class="page2">
+      <div style="text-align: center;" class="m1">Физика изучает природу с помощью таких методов познания как наблюдение и опыты.</div>
+      <div class="container">
+        <div class="block1">
+          <div>
+          <div style="text-align:center;" class="m2">Наблюдение<br>(пассивны, проводятся)</div>
+        </div>
+          <div class="eyes">
+            <div class='Eye1'>
+              <div class="eye1"></div>
+            </div>
+            <div class="Eye2">
+              <div class="eye2"></div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="block2">
+          <div>
+          <div style="text-align:center;" class="m2">Опыты<br>(активны, ставятся)</div>
+        </div>
+          <div class="potion">
+          </div>
+      </div>
+    </div>
+    <div class='methods'>
+      <p>Цепочка научного познания</p>
+      <ol>
+        <li>Наблюдение</li>
+        <li>Выдвижение гипотезы</li>
+        <li>Проверка гипотезы опытом</li>
+        <li>Формулировка закона</li>
+        <li>Эксперементальная проверка закона</li>
+        <li>Создание теории</li>
+      </ol>
+    </div>
+    
+  </div>
+  
+
+</div>
+
+
+
+
+
+
+</body>
+<script type="text/javascript">
+  let introduction = document.querySelector('.introduction')
+  let menu = document.querySelector('.menu')
+function moving(){
+  introduction.className = 'active'
+  menu.style.opacity = '1'
+
+}
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+window.onload=moving
+setTimeout(function(){
+let nameless= document.querySelector('.nameless')
+nameless.style.opacity = '100%'
+},1500)
+if (window.innerWidth > 992) {
+document.onmousemove= function(event){
+  let x = event.x-296
+  let y = event.y-456
+  document.querySelector('.Eye1').style.transform = `rotate(${57.2958*arctag(x,y)}deg`
+  document.querySelector('.Eye2').style.transform = `rotate(${57.2958*arctag(x,y)}deg`
+  function arctag(x,y){
+    if (x > 0 && y>0) return Math.PI / 2 - Math.atan(x/y)
+    if (x < 0 && y>0) return Math.PI / 2 - Math.atan(x/y)
+    if (x < 0 && y<0) return Math.PI  + Math.atan(y/x)
+      if (x > 0 && y<0) return 3* Math.PI / 2 +Math.abs( Math.atan(x/y))
+  }
+
+}
+}
+
+console.log('Создано Касаткиным Владиславым 11-А')
+  
+</script>
+</html>
